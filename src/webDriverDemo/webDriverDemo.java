@@ -10,7 +10,9 @@ public class webDriverDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.firefox.marionette","F:\\selenium\\geckodriver-v0.9.0-win64\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver","F:\\selenium\\geckodriver-v0.15.0-win64\\geckodriver.exe");
+		
+		System.setProperty ( "webdriver.firefox.bin" , "C:/Program Files (x86)/Mozilla Firefox/firefox.exe" );
 		
 		WebDriver driver = new FirefoxDriver();
 		//Puts a Implicit wait, Will wait for 10 seconds before throwing exception
