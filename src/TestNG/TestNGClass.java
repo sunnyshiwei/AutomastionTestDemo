@@ -2,11 +2,10 @@ package TestNG;
 
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.server.handler.FindElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -60,10 +59,27 @@ public class TestNGClass {
 	  //‘取消’按钮
 	  driver.findElement(By.xpath(".//*[@id='block_17d4d69c21ed4e0e']/div[1]/div[2]/div[3]/button[2]")).click();
 	  
+	  //driver.findElement(By.name("测试新增卡片")).click();
 	  
-	   driver。get
+	  //driver.findElements(By.);
+	  
+	  //System.out.print( driver.getCurrentUrl());
 	   
-	   
+	  //driver.findElements(By.tagName("id"));
+	  
+	  //driver.findElement(By.xpath(".//*[text()='测试新增卡片']")).click();
+	  
+	  //driver.findElement(By.className("fa fa-pencil")).click();
+	  ////打印出button的个数
+	  //System.out.println(driver.findElements(By.tagName("id")).size());
+	  
+	  //driver.findElement(By.cssSelector(""));
+	  
+	  // driver.findElement(By.)
+	    
+	  driver.findElement(By.name("测试新增卡片")).click();
+	  
+	  //driver.findElement(By.tagName("span")).click();
 	  //点击整个卡片进入
 	  driver.findElement(By.xpath(".//*[@id='task_e2cb80b7a1483018']/span")).click();
 	  //点击成员
