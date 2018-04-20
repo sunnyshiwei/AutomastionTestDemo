@@ -2,19 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6976" started-at="2018-04-20T02:51:53Z" finished-at="2018-04-20T02:52:00Z">
+  <suite name="Default suite" duration-ms="46431" started-at="2018-04-20T10:04:14Z" finished-at="2018-04-20T10:05:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6976" started-at="2018-04-20T02:51:53Z" finished-at="2018-04-20T02:52:00Z">
+    <test name="Default test" duration-ms="46431" started-at="2018-04-20T10:04:14Z" finished-at="2018-04-20T10:05:00Z">
       <class name="TestForAnsteel.TestForAnsteel">
-        <test-method status="PASS" signature="dd()[pri:0, instance:TestForAnsteel.TestForAnsteel@2f943d71]" name="dd" is-config="true" duration-ms="5146" started-at="2018-04-20T02:51:53Z" finished-at="2018-04-20T02:51:59Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestForAnsteel.TestForAnsteel@80503]" name="beforeTest" is-config="true" duration-ms="36789" started-at="2018-04-20T10:04:14Z" finished-at="2018-04-20T10:04:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dd -->
-        <test-method status="PASS" signature="f()[pri:0, instance:TestForAnsteel.TestForAnsteel@2f943d71]" name="f" duration-ms="1806" started-at="2018-04-20T02:51:59Z" finished-at="2018-04-20T02:52:00Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="authorityManageTest()[pri:0, instance:TestForAnsteel.TestForAnsteel@80503]" name="authorityManageTest" duration-ms="9610" started-at="2018-04-20T10:04:51Z" finished-at="2018-04-20T10:05:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
+        </test-method> <!-- authorityManageTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestForAnsteel.TestForAnsteel@80503]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-04-20T10:05:00Z" finished-at="2018-04-20T10:05:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
       </class> <!-- TestForAnsteel.TestForAnsteel -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

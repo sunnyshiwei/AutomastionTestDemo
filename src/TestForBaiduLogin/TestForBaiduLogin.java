@@ -1,4 +1,4 @@
-package TestForAnsteel;
+package TestForBaiduLogin;
 
 import org.testng.annotations.Test;
 import java.awt.Rectangle;
