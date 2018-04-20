@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10647" started-at="2018-04-18T07:36:26Z" finished-at="2018-04-18T07:36:36Z">
+  <suite name="Default suite" duration-ms="6976" started-at="2018-04-20T02:51:53Z" finished-at="2018-04-20T02:52:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10647" started-at="2018-04-18T07:36:26Z" finished-at="2018-04-18T07:36:36Z">
+    <test name="Default test" duration-ms="6976" started-at="2018-04-20T02:51:53Z" finished-at="2018-04-20T02:52:00Z">
       <class name="TestForAnsteel.TestForAnsteel">
-        <test-method status="PASS" signature="dd()[pri:0, instance:TestForAnsteel.TestForAnsteel@2f943d71]" name="dd" is-config="true" duration-ms="5731" started-at="2018-04-18T07:36:26Z" finished-at="2018-04-18T07:36:31Z">
+        <test-method status="PASS" signature="dd()[pri:0, instance:TestForAnsteel.TestForAnsteel@2f943d71]" name="dd" is-config="true" duration-ms="5146" started-at="2018-04-20T02:51:53Z" finished-at="2018-04-20T02:51:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dd -->
-        <test-method status="PASS" signature="f()[pri:0, instance:TestForAnsteel.TestForAnsteel@2f943d71]" name="f" duration-ms="4880" started-at="2018-04-18T07:36:32Z" finished-at="2018-04-18T07:36:36Z">
+        <test-method status="PASS" signature="f()[pri:0, instance:TestForAnsteel.TestForAnsteel@2f943d71]" name="f" duration-ms="1806" started-at="2018-04-20T02:51:59Z" finished-at="2018-04-20T02:52:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
