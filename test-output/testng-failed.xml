@@ -5,8 +5,8 @@
     <classes>
       <class name="TestForAnsteel.TestForAnsteel">
         <methods>
+          <include name="authManageTest"/>
           <include name="beforeTest"/>
-          <include name="authorityManageTest"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- TestForAnsteel.TestForAnsteel -->
