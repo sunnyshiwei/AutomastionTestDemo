@@ -52,7 +52,7 @@ public class TestForAnsteel {
 	}
 
 	@Test
-	public void authManageTest() throws InterruptedException {
+	public void authManageTest()  {
 		
 		String userName="autoTestDemo";
 		String userEmail="testAutomation@163.com";
@@ -62,15 +62,30 @@ public class TestForAnsteel {
 		
 		//切入权限管理菜单
 		driver.findElement(By.linkText("权限管理")).click();
-		Thread.sleep(1000);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//切入用户信息维护菜单
 		driver.findElement(By.linkText("用户信息维护")).click();
-		Thread.sleep(3000);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//点击新增按钮
 		driver.findElement(By.xpath("//div[@class='ui-toolbar-group-right']/button[1]")).click();
-		Thread.sleep(2000);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//定位用户名元素位置，并输入用户名
 		driver.findElement(By.xpath("//p-dialog/div/div[2]/div/div[1]/div/div/input")).click();		
@@ -106,7 +121,12 @@ public class TestForAnsteel {
 		
 		//定位保存按钮元素
 		driver.findElement(By.xpath("//p-footer/button[1]")).click();
-		Thread.sleep(2000);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//查询元素
 		driver.findElement(By.xpath("//p-header/div/div/div[1]/div/input")).click();
@@ -124,7 +144,12 @@ public class TestForAnsteel {
 		
 		//左键双击操作，perform（）提交并生效
 		actions.doubleClick(userNameTable).perform();
-		Thread.sleep(2000);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 //		//右键单击操纵，perform（）提交并生效
 //		actions.contextClick(userNameTable).perform();
