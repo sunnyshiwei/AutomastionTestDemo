@@ -28,7 +28,7 @@ public class TestNGClass {
 	 
 	 driver = new FirefoxDriver();
 	  
-	 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	  
 	 driver.navigate().to("https://www.leangoo.com/kanban/board/go/2351913");
 	  
@@ -37,62 +37,62 @@ public class TestNGClass {
   }
   @Test
   public void testDemo01(){
-	  //ÊäÈëÓÃ»§Ãû
+	  //ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
 	  driver.findElement(By.xpath(".//*[@id='tabPaneEmail']/div[1]/input")).sendKeys("shiwei@eigpay.com.cn");
-	  //ÊäÈëÃÜÂë
+	  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	  driver.findElement(By.xpath(".//*[@id='tabPaneEmail']/div[2]/input")).sendKeys("ww744934");
-	  //µã»÷µÇÂ¼°´Å¥
+	  //ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Å¥
 	  driver.findElement(By.xpath(".//*[@id='tabPaneEmail']/div[4]/button")).click();
-	  //µÈ´ıÊ±¼ä
+	  //ï¿½È´ï¿½Ê±ï¿½ï¿½
 	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	  
-	  //µã»÷ÁĞ±íÓÒÉÏ½Ç¡®Èı¡¯
+	  //ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½ï¿½ï¿½ï¿½Ï½Ç¡ï¿½ï¿½ï¿½ï¿½ï¿½
 	  driver.findElement(By.xpath(".//*[@id='list_6559802']/div/div[1]/a")).click();
-	  //µã»÷¡°Ìí¼Ó¿¨Æ¬¡±
+	  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Æ¬ï¿½ï¿½
 	  driver.findElement(By.xpath(".//*[@id='ulListMenu']/li[1]/a")).click();
-	  //ÊäÈë¿¨Æ¬ÄÚÈİ
-	  driver.findElement(By.xpath(".//*[@id='block_17d4d69c21ed4e0e']/div[1]/div[1]/div[1]/textarea")).sendKeys("²âÊÔĞÂÔö¿¨Æ¬");
-	  //ÊäÈë¿¨Æ¬ÄÚÈİºó£¬µã»÷¡°Ìí¼Ó¡±°´Å¥
+	  //ï¿½ï¿½ï¿½ë¿¨Æ¬ï¿½ï¿½ï¿½ï¿½
+	  driver.findElement(By.xpath(".//*[@id='block_17d4d69c21ed4e0e']/div[1]/div[1]/div[1]/textarea")).sendKeys("æµ‹è¯•æµ‹è¯•èµ›");
+	  //ï¿½ï¿½ï¿½ë¿¨Æ¬ï¿½ï¿½ï¿½İºó£¬µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½Å¥
 	  driver.findElement(By.xpath(".//*[@id='block_17d4d69c21ed4e0e']/div[1]/div[1]/div[3]/button[1]")).click();
 	  
 	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	  //¡®È¡Ïû¡¯°´Å¥
+	  //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥
 	  driver.findElement(By.xpath(".//*[@id='block_17d4d69c21ed4e0e']/div[1]/div[2]/div[3]/button[2]")).click();
+	  //æ‰“å¼€å·²ç»æ–°å»ºå¡ç‰‡
+	  driver.findElement(By.xpath("//div[@id='block_17d4d69c21ed4e0e']/div/div[1]")).click();
 	  
-	  //driver.findElement(By.name("²âÊÔĞÂÔö¿¨Æ¬")).click();
+	  //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	  
-	  //driver.findElements(By.);
+	  try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	  
-	  //System.out.print( driver.getCurrentUrl());
-	   
-	  //driver.findElements(By.tagName("id"));
-	  
-	  //driver.findElement(By.xpath(".//*[text()='²âÊÔĞÂÔö¿¨Æ¬']")).click();
-	  
-	  //driver.findElement(By.className("fa fa-pencil")).click();
-	  ////´òÓ¡³öbuttonµÄ¸öÊı
-	  //System.out.println(driver.findElements(By.tagName("id")).size());
-	  
-	  //driver.findElement(By.cssSelector(""));
-	  
-	  // driver.findElement(By.)
-	    
-	  driver.findElement(By.name("²âÊÔĞÂÔö¿¨Æ¬")).click();
-	  
-	  //driver.findElement(By.tagName("span")).click();
-	  //µã»÷Õû¸ö¿¨Æ¬½øÈë
-	  driver.findElement(By.xpath(".//*[@id='task_e2cb80b7a1483018']/span")).click();
-	  //µã»÷³ÉÔ±
-	  driver.findElement(By.xpath(".//*[@id='divEditButtonGroup']/div[1]/button")).click();
-	  //Ñ¡Ôñ³ÉÔ±¡°Ê¯Î¢¡±
+	  //ç‚¹å‡»æ–°å¢æˆå‘˜æŒ‰é’®
+	  driver.findElement(By.xpath(".//div[@id='divEditButtonGroup']/div[1]/button")).click();
+	  //é€‰æ‹©äººå‘˜
 	  driver.findElement(By.xpath(".//*[@id='divAddUser']/div[3]/ul/li[1]/div/span[2]")).click();
-	  //Ñ¡Ôñ±êÇ©
-	  driver.findElement(By.xpath(".//*[@id='divEditButtonGroup']/div[2]/button")).click();
-	  //Ñ¡ÔñÆÕÍ¨±êÇ©
+	  //å…³é—­é€‰æ‹©æˆå‘˜å¼¹å‡ºæ¡†
+	  driver.findElement(By.xpath(".//*[@id='divAddUser']/div[1]/button")).click();
+	  //ç‚¹å‡»æ ‡ç­¾é€‰æ‹©æŒ‰é’®
+	  driver.findElement(By.xpath(".//div[@id='divEditButtonGroup']/div[2]/button")).click();	  
+	  //é€‰æ‹©æ ‡ç­¾é¢œè‰²
 	  driver.findElement(By.xpath(".//*[@id='divColorList_tag']/div[1]/ul/li[3]/div")).click();
-	  //¹Ø±Õ±êÇ©
+	  //å…³é—­é€‰æ‹©æ ‡ç­¾é¡µ
 	  driver.findElement(By.xpath(".//*[@id='divAddOrSetTag']/div[1]/button[2]")).click();
-	  //¹Ø±Õ¿´°å¿¨Æ¬
+	  //ç‚¹å‡»å·¥ä½œé‡æŒ‰é’®
+	  driver.findElement(By.xpath(".//*[@id='estimate_work_btn']")).click();
+	  //é€‰æ‹©å·¥ä½œé‡æŒ‰é’®
+	  driver.findElement(By.xpath(".//*[@id='divWorkEstimate']/div[2]/ul/li[6]/a")).click();
+	  //ç‚¹å‡»å…³é—­å·¥ä½œé‡å¼¹å‡ºæ¡†
+	  driver.findElement(By.xpath(".//*[@id='divWorkEstimate']/div[2]/ul/li[6]/a")).click();
+	  //ç‚¹å‡»æˆªæ­¢æ—¶é—´
+	  driver.findElement(By.xpath(".//*[@id='btnDeadline']")).click();
+	  //ç‚¹å‡»æˆªæ­¢æ—¶é—´ä¸­ä¿å­˜æŒ‰é’®
+	  driver.findElement(By.xpath(".//*[@id='datetime_picker']/div/div[3]/table/tfoot/tr/th[1]/button")).click();
+	  //å…³é—­å¡ç‰‡
 	  driver.findElement(By.xpath(".//*[@id='divTaskEdit']/button")).click();
 	  
 //	  driver.findElement(By.xpath(".//*[@id='tabPaneEmail']/div[4]/button")).click();
