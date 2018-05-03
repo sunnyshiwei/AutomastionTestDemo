@@ -6,12 +6,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.lang.System;
 
-public class TestNGClass {
+public class TestKanban {
 
 //	System.setProperty("webdriver.firefox.driver","F:\\selenium\\geckodriver-v0.9.0-win64\\geckodriver.exe");
 //
@@ -36,7 +37,7 @@ public class TestNGClass {
 	  
   }
   @Test
-  public void testDemo01(){
+  public void testKanban01(){
 	  //�����û���
 	  driver.findElement(By.xpath(".//*[@id='tabPaneEmail']/div[1]/input")).sendKeys("shiwei@eigpay.com.cn");
 	  //��������
@@ -95,11 +96,19 @@ public class TestNGClass {
 	  //关闭卡片
 	  driver.findElement(By.xpath(".//*[@id='divTaskEdit']/button")).click();
 	  
+	  //删除新建的卡片
+	  driver.findElement(By.xpath(".//div[@id='block_17d4d69c21ed4e0e']/div[1]/div[1]/div[1]/span[2]")).click();
+	  
 //	  driver.findElement(By.xpath(".//*[@id='tabPaneEmail']/div[4]/button")).click();
 //	  
 //	  driver.findElement(By.xpath(".//*[@id='list_6616306']/div/div[1]/a")).click();
 //	  
 //	  driver.findElement(By.xpath(".//*[@id='list_6559802']/div/div[1]/a/span")).click();
 	  
+  }
+  @AfterTest
+  public void AfterTestDemo() {
+	  
+	  	  
   }
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.Augmentable;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 
 public class TestForAnsteel {
@@ -32,6 +33,17 @@ public class TestForAnsteel {
 
 		driver.manage().window().maximize();
 
+	}
+
+	@Test(enabled = false)
+	public void userInfoTest() {
+
+		String userName = "autoTestDemo";
+		String userEmail = "testAutomation@163.com";
+		String realName = "石微测试自动化";
+
+		actions = new Actions(driver);
+
 		// 定位用户名并传值
 		driver.findElement(By.xpath("//div[@class='input-group mb-3']/input")).click();
 		driver.findElement(By.xpath("//div[@class='input-group mb-3']/input")).sendKeys("admin");
@@ -43,22 +55,16 @@ public class TestForAnsteel {
 		// 定位登录按钮并点击
 		driver.findElement(By.xpath("//div[@class='login-page-panel']/div[7]/button")).click();
 
-		Thread.sleep(3000);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		// 切换园区
 		driver.findElement(By.linkText("物流园二区")).click();
 		driver.findElement(By.xpath("//a[@class='dropdown-item']/i[@class='fa fa-tasks']")).click();
-
-	}
-
-	@Test
-	public void userInfoTest() {
-
-		String userName = "autoTestDemo";
-		String userEmail = "testAutomation@163.com";
-		String realName = "石微测试自动化";
-
-		actions = new Actions(driver);
 
 		// 切入权限管理菜单
 		driver.findElement(By.linkText("权限管理")).click();
@@ -153,15 +159,63 @@ public class TestForAnsteel {
 
 		// //右键单击操纵，perform（）提交并生效
 		// actions.contextClick(userNameTable).perform();
+		WebElement deleteElement = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/span[2]"));
+		// 双击要删除的元素
+		actions.click(deleteElement).perform();
+		// 点击删除按钮，确定按钮
+		driver.findElement(By.xpath("//p-footer/div/div/button[2]")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.xpath("//p-confirmdialog/div/div[3]/p-footer/button[1]")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
 	@Test
 	public void userRegisterTest() {
+		// 点击在线注册
+		driver.findElement(By.linkText("在线注册")).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// 选择注册类型
+		driver.findElement(By.xpath("//p-dropdown/div/div[3]/span")).click();
+		// 选择注册类型“德邻云仓”
+		driver.findElement(By.xpath("//p-dropdown/div/div[4]/div/ul/li[1]")).click();
+		// 定位用户名称输入框
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[2]/div[2]/input")).click();
+		// 输入用户名称
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[2]/div[2]/input")).sendKeys("sunnyAutomationTest");
 		
-		driver.findElement(By.xpath("//div[ends-with(@id)]"));
+		//定位密码输入框
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[3]/div[2]/input")).click();	
+		//输入秘密
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[3]/div[2]/input")).sendKeys("111111");
+		//定位确认秘密输入框
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[4]/div[2]/input")).click();
+		//输入确认密码
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[4]/div[2]/input")).sendKeys("111111");
+	    
+		//定位地区下拉框
+		driver.findElement(By.xpath("//div[5]/div[2]/p-dropdown/div/div[3]/span")).click();
 		
-
+		//选择“鞍山”地区
+		driver.findElement(By.xpath("//div[5]/div[2]/p-dropdown/div/div[4]/div/ul/li[5]")).click();
+		//选择‘下一步’按钮
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[6]/button[1]")).click();
+		
 	}
 	// public void loginTest() throws InterruptedException {
 	//
@@ -188,19 +242,10 @@ public class TestForAnsteel {
 	// fa-tasks']")).click();
 	// }
 
-	@AfterTest
-	public void afterTest() throws InterruptedException {
-
-		WebElement deleteElement = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/span[2]"));
-		// 双击要删除的元素
-		actions.click(deleteElement).perform();
-		// 点击删除按钮，确定按钮
-		driver.findElement(By.xpath("//p-footer/div/div/button[2]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//p-confirmdialog/div/div[3]/p-footer/button[1]")).click();
-		Thread.sleep(1000);
+	@AfterClass
+	public void AfterClass() {
 		// driver.quit();
 		driver.close();
-		
+
 	}
 }
