@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG.TestNGClass">
+      <class name="TestNG.TestKanban">
         <methods>
+          <include name="testKanban01"/>
+          <include name="AfterTestDemo"/>
           <include name="Beforett"/>
-          <include name="testDemo01"/>
         </methods>
-      </class> <!-- TestNG.TestNGClass -->
+      </class> <!-- TestNG.TestKanban -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
