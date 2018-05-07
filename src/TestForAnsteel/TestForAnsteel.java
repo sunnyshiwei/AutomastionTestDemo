@@ -35,14 +35,7 @@ public class TestForAnsteel {
 
 	}
 
-	@Test(enabled = false)
-	public void userInfoTest() {
-
-		String userName = "autoTestDemo";
-		String userEmail = "testAutomation@163.com";
-		String realName = "石微测试自动化";
-
-		actions = new Actions(driver);
+	public void loginTest() {
 
 		// 定位用户名并传值
 		driver.findElement(By.xpath("//div[@class='input-group mb-3']/input")).click();
@@ -61,6 +54,18 @@ public class TestForAnsteel {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	}
+
+	@Test(enabled = false)
+	public void userInfoTest() {
+
+		String userName = "autoTestDemo";
+		String userEmail = "testAutomation@163.com";
+		String realName = "石微测试自动化";
+
+		actions = new Actions(driver);
+
+		loginTest();
 
 		// 切换园区
 		driver.findElement(By.linkText("物流园二区")).click();
@@ -143,6 +148,12 @@ public class TestForAnsteel {
 		driver.findElement(By.xpath("//span[@class='ui-inputgroup-addon']/i[@class='fa fa-close']")).click();
 		driver.findElement(By.xpath("//p-header/div/div/div[2]/div/button")).click();
 
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		// 双击列表数据，并进行修改数据
 		WebElement userNameTable = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/span[2]"));
 		// 单击操作并传入参数，perform（）提交并生效
@@ -150,6 +161,7 @@ public class TestForAnsteel {
 
 		// 左键双击操作，perform（）提交并生效
 		actions.doubleClick(userNameTable).perform();
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -181,7 +193,9 @@ public class TestForAnsteel {
 	}
 
 	@Test
-	public void userRegisterTest() {
+	//(dependsOnMethods={"userInfoTest"})
+	public void userRegisterTest() {		
+		
 		// 点击在线注册
 		driver.findElement(By.linkText("在线注册")).click();
 		try {
@@ -197,25 +211,121 @@ public class TestForAnsteel {
 		// 定位用户名称输入框
 		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[2]/div[2]/input")).click();
 		// 输入用户名称
-		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[2]/div[2]/input")).sendKeys("sunnyAutomationTest");
-		
-		//定位密码输入框
-		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[3]/div[2]/input")).click();	
-		//输入秘密
-		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[3]/div[2]/input")).sendKeys("111111");
-		//定位确认秘密输入框
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[2]/div[2]/input"))
+				.sendKeys("sunnyAutomationTest");
+
+		// 定位密码输入框
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[3]/div[2]/input")).click();
+		// 输入秘密
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[3]/div[2]/input"))
+				.sendKeys("111111");
+		// 定位确认秘密输入框
 		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[4]/div[2]/input")).click();
-		//输入确认密码
-		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[4]/div[2]/input")).sendKeys("111111");
-	    
-		//定位地区下拉框
+		// 输入确认密码
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[4]/div[2]/input"))
+				.sendKeys("111111");
+
+		// 定位地区下拉框
 		driver.findElement(By.xpath("//div[5]/div[2]/p-dropdown/div/div[3]/span")).click();
-		
-		//选择“鞍山”地区
+
+		// 选择“鞍山”地区
 		driver.findElement(By.xpath("//div[5]/div[2]/p-dropdown/div/div[4]/div/ul/li[5]")).click();
-		//选择‘下一步’按钮
+		// 选择‘下一步’按钮
 		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div/div[6]/button[1]")).click();
 		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//选择‘仓储名称’下拉框
+		driver.findElement(By.xpath("//div[2]/p-dropdown/div/div[3]/span")).click();		
+		//选择物流园
+		driver.findElement(By.xpath("//div[2]/p-dropdown/div/div[4]/div[2]/ul/li[1]")).click();
+		//选择‘运输方式’下拉框
+		driver.findElement(By.xpath("//div[4]/p-dropdown/div/div[3]/span")).click();
+		//选择‘运输方式：铁运’
+		driver.findElement(By.xpath("//div[4]/p-dropdown/div/div[4]/div[2]/ul/li[2]")).click();
+		//定位客户名称输入框
+		driver.findElement(By.xpath("//app-register-type-1/div/div[6]/input")).click();
+		//输入客户名称名称
+		driver.findElement(By.xpath("//app-register-type-1/div/div[6]/input")).sendKeys("测试客户名称");
+		//定位姓名输入框
+		driver.findElement(By.xpath("//app-register-type-1/div/div[8]/input")).click();
+		//输入姓名输入框
+		driver.findElement(By.xpath("//app-register-type-1/div/div[8]/input")).sendKeys("测试姓名");
+		//定位联系人电话
+		driver.findElement(By.xpath("//app-register-type-1/div/div[10]/input")).click();
+		//输入联系人电话
+		driver.findElement(By.xpath("//app-register-type-1/div/div[10]/input")).sendKeys("1399999999");
+		//定位年吞吐量
+		driver.findElement(By.xpath("//app-register-type-1/div/div[14]/div/input")).click();
+		//输入年吞吐量
+		driver.findElement(By.xpath("//app-register-type-1/div/div[14]/div/input")).sendKeys("7983743.555");
+		//选择仓库类型下拉框
+		driver.findElement(By.xpath("//div[12]/p-dropdown/div/div[3]/span")).click();
+		//仓库类型选择‘自营库’
+		driver.findElement(By.xpath("//div[12]/p-dropdown/div/div[4]/div[2]/ul/li[1]")).click();
+		//选择仓库规模下拉框
+		driver.findElement(By.xpath("//div[18]/p-dropdown/div/div[3]/span")).click();
+		//选择仓库规模100到200
+		driver.findElement(By.xpath("//div[18]/p-dropdown/div/div[4]/div[2]/ul/li[3]")).click();
+		//选择品种下拉框
+		driver.findElement(By.xpath("//div[20]/p-dropdown/div/div[3]/span")).click();
+		//选择品种‘钢材’
+		driver.findElement(By.xpath("//div[20]/p-dropdown/div/div[4]/div[2]/ul/li[2]")).click();
+		//详细地址定位
+		driver.findElement(By.xpath("//app-register-type-1/div/div[22]/input")).click();
+		//输入详细地址
+		driver.findElement(By.xpath("//app-register-type-1/div/div[22]/input")).sendKeys("辽宁省大连市高新园区腾讯大厦");
+		//定位营业执照号码
+		driver.findElement(By.xpath("//app-register-type-1/div/div[24]/input")).click();
+		//输入营业执照号码
+		driver.findElement(By.xpath("//app-register-type-1/div/div[24]/input")).sendKeys("87432974438888888");
+		//定位并输入注册资金
+		driver.findElement(By.xpath("//app-register-type-1/div/div[26]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[26]/input")).sendKeys("3454543543");
+		//定位并输入税务资金		
+		driver.findElement(By.xpath("//app-register-type-1/div/div[28]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[28]/input")).sendKeys("33333333333");
+		//定位并输入仓库办公室电话:
+		driver.findElement(By.xpath("//app-register-type-1/div/div[30]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[30]/input")).sendKeys("0411-44448888");
+		//定位并输入企业法人名称:
+		driver.findElement(By.xpath("//app-register-type-1/div/div[32]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[32]/input")).sendKeys("法人名称测试");
+		//定位并输入企业法人身份证号
+		driver.findElement(By.xpath("//app-register-type-1/div/div[34]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[34]/input")).sendKeys("210921222222222222");
+		//定位并输入对公账户开户行:
+		driver.findElement(By.xpath("//app-register-type-1/div/div[36]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[36]/input")).sendKeys("888888888444");
+		//定位并输入对公账户账号:
+		driver.findElement(By.xpath("//app-register-type-1/div/div[38]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[38]/input")).sendKeys("788888857485");
+		//定位并办理纳税人识别号:
+		driver.findElement(By.xpath("//app-register-type-1/div/div[40]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[40]/input")).sendKeys("0000009999999");
+		//定位并输入公司传真
+		driver.findElement(By.xpath("//app-register-type-1/div/div[42]/input")).click();
+		driver.findElement(By.xpath("//app-register-type-1/div/div[42]/input")).sendKeys("0411-99998888");
+		//定位并选择三证合一（否）
+		driver.findElement(By.xpath("//p-radiobutton[2]/div/div[2]/span")).click();
+		//定位并输入统一社会信用代码:
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div[1]/div/div[1]/div[4]/input")).click();
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div[1]/div/div[1]/div[4]/input")).sendKeys("2343333333333");;
+		//统一社会信用代码注册时间:
+		driver.findElement(By.xpath("//div[2]/p-calendar/span/input")).click();
+		//时间选择当前日期
+		driver.findElement(By.xpath("//div[2]/p-calendar/span/div/table/tbody/tr[1]/td[6]/a")).click();
+		//统一社会信用代码有效期至:
+		driver.findElement(By.xpath("//div[4]/p-calendar/span/input")).click();
+		driver.findElement(By.xpath("//div[4]/p-calendar/span/div/table/tbody/tr[1]/td[6]/a")).click();
+		
+		
+
 	}
 	// public void loginTest() throws InterruptedException {
 	//
@@ -242,10 +352,18 @@ public class TestForAnsteel {
 	// fa-tasks']")).click();
 	// }
 
-	@AfterClass
-	public void AfterClass() {
-		// driver.quit();
+	@AfterTest
+	public void AfterTest() {
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.close();
+
+		//driver.close();
 
 	}
 }
