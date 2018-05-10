@@ -1,8 +1,12 @@
 package TestForAnsteel;
 
 import org.testng.annotations.Test;
+
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
+
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,6 +58,40 @@ public class TestForAnsteel {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	}
+	
+	public void uploadFiles(){
+		
+		//File file = new File("C:/Users/Administrator/Desktop/test001.jpg");
+		//File file = new File("C:\\Users\\happy\\Desktop\\FileUpload.html");
+	        // 用java来实现文件读取功 \
+	    //String filePath="C:/Users/Administrator/Desktop/test001.jpg";
+		//File file = new File(filePath);
+		//driver.get(file.getAbsolutePath());
+		//driver.get(file.getAbsolutePath());
+		//driver.findElement(By.xpath("//div/p-fileupload/div/div[1]/span/input")).click();
+		
+//		try {
+//			Thread.sleep(3000);
+//		} catch (InterruptedException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		
+		// Java 的Runtime 模块的getruntime.exec()方法可以调用exe 程序并执行。
+		Runtime exe= Runtime.getRuntime();
+		 
+		try {
+			String str= "F:\\selenium\\TestForUploadFile\\testAutoIt.exe";
+			//运行指定位置的.exe文件
+			exe.exec(str);
+			
+		} catch (Exception e) {
+			System.out.println("Error to run the exe");
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
 	}
 
 	@Test(enabled = false)
@@ -228,6 +266,13 @@ public class TestForAnsteel {
 		// 定位地区下拉框
 		driver.findElement(By.xpath("//div[5]/div[2]/p-dropdown/div/div[3]/span")).click();
 
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		// 选择“鞍山”地区
 		driver.findElement(By.xpath("//div[5]/div[2]/p-dropdown/div/div[4]/div/ul/li[5]")).click();
 		// 选择‘下一步’按钮
@@ -292,7 +337,7 @@ public class TestForAnsteel {
 		driver.findElement(By.xpath("//app-register-type-1/div/div[28]/input")).sendKeys("33333333333");
 		//定位并输入仓库办公室电话:
 		driver.findElement(By.xpath("//app-register-type-1/div/div[30]/input")).click();
-		driver.findElement(By.xpath("//app-register-type-1/div/div[30]/input")).sendKeys("0411-44448888");
+		driver.findElement(By.xpath("//app-register-type-1/div/div[30]/input")).sendKeys("041144448888");
 		//定位并输入企业法人名称:
 		driver.findElement(By.xpath("//app-register-type-1/div/div[32]/input")).click();
 		driver.findElement(By.xpath("//app-register-type-1/div/div[32]/input")).sendKeys("法人名称测试");
@@ -310,7 +355,7 @@ public class TestForAnsteel {
 		driver.findElement(By.xpath("//app-register-type-1/div/div[40]/input")).sendKeys("0000009999999");
 		//定位并输入公司传真
 		driver.findElement(By.xpath("//app-register-type-1/div/div[42]/input")).click();
-		driver.findElement(By.xpath("//app-register-type-1/div/div[42]/input")).sendKeys("0411-99998888");
+		driver.findElement(By.xpath("//app-register-type-1/div/div[42]/input")).sendKeys("041199998888");
 		//定位并选择三证合一（否）
 		driver.findElement(By.xpath("//p-radiobutton[2]/div/div[2]/span")).click();
 		//定位并输入统一社会信用代码:
@@ -323,9 +368,15 @@ public class TestForAnsteel {
 		//统一社会信用代码有效期至:
 		driver.findElement(By.xpath("//div[4]/p-calendar/span/input")).click();
 		driver.findElement(By.xpath("//div[4]/p-calendar/span/div/table/tbody/tr[1]/td[6]/a")).click();
-		
-		
 
+		//点击“选择文件”按钮,并上传文件
+		driver.findElement(By.xpath("//p-fileupload/div/div[1]/span/input")).sendKeys("C:\\Users\\Administrator\\Desktop\\test001.jpg");
+		//点击‘开始上传’按钮
+		driver.findElement(By.xpath("//p-fileupload/div/div[1]/button")).click();
+		//点击提交按钮
+		driver.findElement(By.xpath("//app-icw-register/div/div[2]/div/div/div/div/div[3]/button[1]")).click();
+		//uploadFiles();
+		
 	}
 	// public void loginTest() throws InterruptedException {
 	//
