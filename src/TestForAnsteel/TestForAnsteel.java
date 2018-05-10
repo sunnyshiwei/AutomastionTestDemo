@@ -378,6 +378,26 @@ public class TestForAnsteel {
 		//uploadFiles();
 		
 	}
+	//注册用户审核页面
+	@Test(dependsOnMethods={"userRegisterTest"})
+	public void userAudit(){
+		
+		loginTest();
+		// 切换园区
+		driver.findElement(By.linkText("物流园二区")).click();
+		driver.findElement(By.xpath("//a[@class='dropdown-item']/i[@class='fa fa-tasks']")).click();
+
+		// 切入权限管理菜单
+		driver.findElement(By.linkText("权限管理")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
 	// public void loginTest() throws InterruptedException {
 	//
 	// //定位用户名并传值

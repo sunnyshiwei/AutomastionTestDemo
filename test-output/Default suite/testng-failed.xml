@@ -6,6 +6,7 @@
       <class name="TestForAnsteel.TestForAnsteel">
         <methods>
           <include name="beforeTest"/>
+          <include name="userAudit"/>
           <include name="userRegisterTest"/>
           <include name="AfterTest"/>
         </methods>
